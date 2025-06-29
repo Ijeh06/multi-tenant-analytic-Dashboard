@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { useTenant } from '@/contexts/tenant-context';
 import { hasPermission } from '@/lib/auth';
-import { Plus, MoreHorizontal } from 'lucide-react';
+import { Plus, MoreHorizontal, UserPlus } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -61,10 +61,13 @@ export default function UsersPage() {
             </p>
           </div>
           {canManageUsers && (
-            <Button>
-              <Plus className="h-4 w-4 mr-2" />
+            <button
+              type="button"
+              className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            >
+              <UserPlus className="h-4 w-4 mr-2" />
               Add User
-            </Button>
+            </button>
           )}
         </div>
 

@@ -29,8 +29,8 @@ const ViewerDashboardContent: React.FC = () => {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
-      <div className="w-full max-w-5xl space-y-6">
+    <div className="flex min-h-screen items-center bg-gray-50 px-4 py-12">
+      <div className="w-full max-w-5xl space-y-6 mr-64">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
@@ -41,7 +41,7 @@ const ViewerDashboardContent: React.FC = () => {
               Viewer Access - {user.name}
             </p>
           </div>
-          <div className="flex items-center px-4 py-2 bg-gray-100 rounded-lg">
+          <div className="flex items-start px-4 py-2 bg-gray-100 rounded-lg focus:hover:bg-gray-200">
             <Eye className="h-4 w-4 mr-2 text-gray-500" />
             <span className="text-gray-600">Read Only</span>
           </div>
@@ -56,21 +56,21 @@ const ViewerDashboardContent: React.FC = () => {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+          <div className="bg-white rounded-lg shadow-xl p-6 border border-gray-200">
             <div className="flex items-center">
-              <div className="p-3 bg-green-100 rounded-lg">
+              <div className="p-3 bg-green-100 rounded-2xl">
                 <BarChart3 className="h-6 w-6 text-green-600" />
               </div>
               <div className="ml-4">
                 <p className="text-sm text-gray-500">Assigned Reports</p>
-                <p className="text-2xl font-bold text-gray-900">5</p>
+                <p className="text-lg font-bold text-gray-900">5</p>
               </div>
             </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+          <div className="bg-white rounded-lg shadow-xl p-6 border border-gray-200">
             <div className="flex items-center">
-              <div className="p-3 bg-blue-100 rounded-lg">
+              <div className="p-3 bg-blue-100 rounded-2xl">
                 <Activity className="h-6 w-6 text-blue-600" />
               </div>
               <div className="ml-4">
@@ -80,21 +80,21 @@ const ViewerDashboardContent: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+          <div className="bg-white rounded-lg shadow-xl p-6 border border-gray-200">
             <div className="flex items-center">
-              <div className="p-3 bg-purple-100 rounded-lg">
+              <div className="p-3 bg-purple-100 rounded-2xl">
                 <Eye className="h-6 w-6 text-purple-600" />
               </div>
               <div className="ml-4">
                 <p className="text-sm text-gray-500">Views Today</p>
-                <p className="text-2xl font-bold text-gray-900">24</p>
+                <p className="text-lg font-bold text-gray-900">24</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Limited Analytics Widget */}
-        <div className="grid grid-cols-1 gap-6">
+        {/* <div className="grid grid-cols-1 gap-6">
           <AnalyticsWidget
             title="My Engagement Overview"
             value={analyticsData.engagement.value}
@@ -108,7 +108,7 @@ const ViewerDashboardContent: React.FC = () => {
             color="#8B5CF6"
             clickable={false}
           />
-        </div>
+        </div> */}
 
         {/* Assigned Content */}
         <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">

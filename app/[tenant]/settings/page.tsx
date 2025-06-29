@@ -40,6 +40,7 @@ export default function SettingsPage() {
                   id="org-name"
                   value={tenant?.name || ''}
                   disabled={!canEditSettings}
+                  readOnly={!canEditSettings}
                 />
               </div>
               <div>
@@ -48,6 +49,7 @@ export default function SettingsPage() {
                   id="org-slug"
                   value={tenant?.slug || ''}
                   disabled={!canEditSettings}
+                  readOnly={!canEditSettings}
                 />
               </div>
               {canEditSettings && (
@@ -73,11 +75,13 @@ export default function SettingsPage() {
                     type="color"
                     value={tenant?.theme.primaryColor || '#3B82F6'}
                     disabled={!canEditSettings}
+                    readOnly={!canEditSettings}
                     className="w-16 h-10"
                   />
                   <Input 
                     value={tenant?.theme.primaryColor || '#3B82F6'}
                     disabled={!canEditSettings}
+                    readOnly={!canEditSettings}
                   />
                 </div>
               </div>
@@ -89,11 +93,13 @@ export default function SettingsPage() {
                     type="color"
                     value={tenant?.theme.secondaryColor || '#10B981'}
                     disabled={!canEditSettings}
+                    readOnly={!canEditSettings}
                     className="w-16 h-10"
                   />
                   <Input 
                     value={tenant?.theme.secondaryColor || '#10B981'}
                     disabled={!canEditSettings}
+                    readOnly={!canEditSettings}
                   />
                 </div>
               </div>

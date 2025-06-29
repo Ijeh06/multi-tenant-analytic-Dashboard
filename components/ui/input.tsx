@@ -7,6 +7,11 @@ export interface InputProps
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
+    // Automatically set readOnly if value is provided without onChange
+    const needsReadOnly =
+      props.value !== undefined &&
+      props.onChange === undefined &&
+      !props.readOnly;
     return (
       <input
         type={type}
@@ -16,6 +21,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         ref={ref}
         {...props}
+        readOnly={needsReadOnly || props.readOnly}
       />
     );
   }

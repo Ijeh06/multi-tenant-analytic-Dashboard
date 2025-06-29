@@ -77,7 +77,7 @@ export function DashboardSidebar({ open, onClose, tenant }: DashboardSidebarProp
 
       {/* Sidebar */}
       <aside className={cn(
-        "fixed left-0 top-0 z-50 h-full w-64 bg-slate-900 border-r border-gray-200 transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:z-0",
+        "fixed left-0 top-0 z-50 h-200vh w-64 bg-slate-900 border-r border-gray-200 transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:z-0",
         open ? "translate-x-0" : "-translate-x-full"
       )}>
         <div className="flex items-center justify-between p-6 border-b border-gray-200 lg:hidden">

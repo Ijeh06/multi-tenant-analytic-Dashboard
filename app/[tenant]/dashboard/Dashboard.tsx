@@ -87,7 +87,7 @@ const Dashboard: React.FC = () => {
               change={analyticsData.revenue.change}
               data={analyticsData.revenue.data}
               dataKey="revenue"
-              format={(value) => `$${value.toLocaleString()}`}
+              format={(value: { toLocaleString: () => any; }) => `$${value.toLocaleString()}`}
               color="#10B981"
               metricType="revenue"
             />
@@ -100,7 +100,7 @@ const Dashboard: React.FC = () => {
             change={analyticsData.engagement.change}
             data={analyticsData.engagement.data}
             dataKey="engagement"
-            format={(value) => `${value}%`}
+            format={(value: number) => `${value}%`}
             color="#8B5CF6"
             metricType="engagement"
           />

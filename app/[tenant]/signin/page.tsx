@@ -229,7 +229,7 @@ export default function SignInPage() {
                 Forgot your password?
               </button>
               <div className="text-xs text-gray-500">
-                Don't have an account? Contact your administrator
+                Don&apos;t have an account? Contact your administrator
               </div>
             </div>
           </CardContent>

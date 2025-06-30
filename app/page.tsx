@@ -7,7 +7,7 @@ export default function RootPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to default tenant dashboard
+    // Redirect to default tenant signin page
     router.replace('/acme/signin');
   }, [router]);
 

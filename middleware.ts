@@ -20,7 +20,7 @@ export function middleware(request: NextRequest) {
 
   // Handle root path
   if (!tenantSlug) {
-    return NextResponse.redirect(new URL('/acme/dashboard', request.url));
+    return NextResponse.redirect(new URL('/acme/signin', request.url));
   }
 
   // Validate tenant

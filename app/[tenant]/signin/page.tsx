@@ -23,11 +23,11 @@ export default function SignInPage() {
   const [error, setError] = useState('');
 
   // Redirect if already authenticated
-  useEffect(() => {
-    if (!loading && user && tenant) {
-      router.replace(`/${tenant.slug}/dashboard`);
-    }
-  }, [user, tenant, loading, router]);
+  // useEffect(() => {
+  //   if (!loading && user && tenant) {
+  //     router.replace(`/${tenant.slug}/dashboard`);
+  //   }
+  // }, [user, tenant, loading, router]);
 
   // Demo users for quick access
   const demoUsers = [

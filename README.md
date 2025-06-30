@@ -69,6 +69,6 @@ cd multi-tenant-analytic-Dashboard
 
 npm install
 
-Npm run dev
+npm run dev
 
 Visit: localhost:3000/

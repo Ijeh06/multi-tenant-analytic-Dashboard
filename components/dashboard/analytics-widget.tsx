@@ -41,7 +41,7 @@ const AnalyticsWidget: React.FC<AnalyticsWidgetProps> = ({
 
   return (
     <div 
-      className={`flex flex-col items-center justify-center bg-white rounded-lg shadow-xl p-6 border border-gray-200 transition-all duration-200 ${
+      className={`bg-white rounded-lg shadow-xl p-6 border border-gray-200 transition-all duration-200 ${
         clickable ? 'cursor-pointer hover:shadow-md hover:border-blue-300 group' : ''
       }`}
       onClick={handleClick}
@@ -49,14 +49,14 @@ const AnalyticsWidget: React.FC<AnalyticsWidgetProps> = ({
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-medium text-gray-500">{title}</h3>
         <div className="flex items-center space-x-2">
-          <span className={`flex items-center text-sm ${isPositive ? 'text-green-600' : 'text-red-600'}`}>
+          <div className={`flex items-center text-sm ${isPositive ? 'text-green-600' : 'text-red-600'}`}>
             {isPositive ? (
               <TrendingUp className="h-4 w-4 mr-1" />
             ) : (
               <TrendingDown className="h-4 w-4 mr-1" />
             )}
             {Math.abs(change)}%
-          </span>
+          </div>
           {clickable && (
             <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
           )}
@@ -78,19 +78,11 @@ const AnalyticsWidget: React.FC<AnalyticsWidgetProps> = ({
               axisLine={false}
               tickLine={false}
               tick={{ fontSize: 12, fill: '#6b7280' }}
-              tickFormatter={(value) => {
-                const date = new Date(value);
-                return isNaN(date.getTime())
-                  ? value
-                  : date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-              }}
+              tickFormatter={(value) => new Date(value).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
             />
             <YAxis hide />
             <Tooltip 
-              labelFormatter={(label: any) => {
-                const date = new Date(label);
-                return isNaN(date.getTime()) ? String(label) : date.toLocaleDateString();
-              }}
+              labelFormatter={(value) => new Date(value).toLocaleDateString()}
               formatter={(value: number) => [format(value), title]}
               contentStyle={{
                 backgroundColor: 'white',

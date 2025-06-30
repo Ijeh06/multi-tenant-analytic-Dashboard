@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTenant } from '../../contexts/TenantContext';
-import AnalyticsWidget from './AnalyticsWidget';
+import AnalyticsWidget from './analytics-widget';
 import { RefreshCw } from 'lucide-react';
 
 const Dashboard: React.FC = () => {

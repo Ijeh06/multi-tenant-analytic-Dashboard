@@ -8,7 +8,7 @@ export default function RootPage() {
 
   useEffect(() => {
     // Redirect to default tenant dashboard
-    router.replace('/acme/dashboard');
+    router.replace('/acme/signin');
   }, [router]);
 
   return (
